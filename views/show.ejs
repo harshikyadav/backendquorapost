@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheet/style2.css">
+</head>
+<body>
+    <form action="/resource/<%=data.id%>?_method=PATCH" method="post">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" value="<%=data.username%>">
+        </div>
+        <div>
+            <label for="unique_id">ID</label>
+            <input type="text" name="id" id="unique_id" value="<%=data.id%>" disabled>
+        </div>
+        <div>
+            <label for="content">Content</label>
+            <textarea name="content" id="content" ><%=data.content%></textarea>
+        </div>
+        <button>Done</button>
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const textarea = document.getElementById("content");
+    
+            function adjustHeight() {
+                textarea.style.height = "auto"; // Reset height
+                textarea.style.height = textarea.scrollHeight + "px"; // Set height to content
+            }
+    
+            textarea.addEventListener("input", adjustHeight);
+            adjustHeight(); // Adjust height on page load
+        });
+    </script>
+</body>
+</html>

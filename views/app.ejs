@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quora Post</h1>
+        <div class="card-container">
+            <%data.forEach((val)=>{%>
+                <div class="card" id="<%=val.id%>" style="background-image: url('<%=val.image%>'); background-size: cover;">
+                    <form action="/resource/<%=val.id%>?_method=DELETE" method="post">
+                    <div class="heading"><%=val.username%></div>
+                    <div class="card-content"><%=val.content%></div>
+                    <div class="card-buttons">
+                        <a href="/posts/<%=val.id%>"><button class="button edit-button" type="button">Edit</button></a>
+                        <button class="button delete-button" type="submit">Delete</button>
+                    </div>
+                   </form>
+    
+                </div>
+           <% })%>
+            <!-- Add more cards as needed -->
+        </div>
+    </div>
+    <footer>
+        <button class="add-button"><a href="/create" >+</a></button>
+    </footer>
+</body>
+</html>

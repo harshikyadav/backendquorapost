@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet/style2.css">
+</head>
+<body>
+    <form action="/posts" method="post">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <div>
+            <label for="unique_id">ID</label>
+            <input type="text" name="id" id="unique_id"  value="<%=id%>" readonly>
+        </div>
+        <div>
+            <label for="image">Image URL</label>
+            <input type="text" name="image" id="image">
+        </div>
+        <div>
+            <label for="content">Content</label>
+            <textarea name="content" id="content"></textarea>
+        </div>
+        <button>Done</button>
+    </form>
+</body>
+</html>
